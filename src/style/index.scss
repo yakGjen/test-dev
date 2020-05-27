@@ -1,0 +1,250 @@
+@import "~normalize.css";
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+$nav-primary: #959595;
+$nav-secondary: #f20134;
+$nav-ok: #26910d;
+$nav-font-size: 20px;
+$header-vertical-padding: 15px;
+$header-horizontal-padding: 20px;
+
+
+.container {
+  /*max-width: 1904px;*/
+  width: 1904px;
+}
+
+.header {
+  background: $nav-secondary;
+}
+
+.common {
+  padding: $header-vertical-padding $header-horizontal-padding;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  background: #000000;
+  color: #ffffff;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 10px;
+}
+
+.logo {
+  margin: 0;
+
+  &__text {
+    font-family: 'Patua One', cursive;
+    font-weight: 500;
+    font-size: 13px;
+    font-style: italic;
+    text-transform: uppercase;
+  }
+
+  &__copy {
+    font-size: 7px;
+  }
+}
+
+.news {
+  &__text {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  &__new {
+    margin-left: 10px;
+    font-style: italic;
+  }
+}
+
+.navigation {
+  padding: 0 $header-horizontal-padding 0 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  color: #ffffff;
+
+  &__list {
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+
+    list-style: none;
+    font-family: 'Patua One', cursive;
+    font-size: $nav-font-size;
+    font-style: italic;
+  }
+
+  &__item {
+    padding: $header-vertical-padding 45px;
+    /*margin-right: 95px;*/
+    cursor: pointer;
+    text-transform: uppercase;
+
+    span:nth-child(2) {
+      font-size: 7px;
+    }
+
+    &_ext {
+      margin-left: 10px;
+      font-family: monospace;
+    }
+
+    &:not(:last-child) {
+      border-right: solid 1px #555654;
+    }
+
+    &:hover {
+      background: $nav-primary;
+      .navigation__card {
+        display: flex;
+      }
+    }
+  }
+
+  &__card {
+    width: 100%;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    /*display: none;*/
+    display: flex;
+
+    position: absolute;
+    left: 0;
+    top: $header-vertical-padding * 2 + $nav-font-size;
+
+    background: #ffffff;
+  }
+
+  .submenu {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-size: 10px;
+
+    &__item {
+      width: calc(100% / 6);
+      padding: 0 13px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      box-sizing: border-box;
+      color: #000000;
+    }
+
+    .buttons {
+      align-items: stretch;
+
+      &__button {
+        padding: 14px 0;
+
+        background: transparent;
+        border: solid 1px $nav-primary;
+        color: $nav-primary;
+        font-size: 10px;
+        cursor: pointer;
+
+        &:not(:last-child) {
+          margin-bottom: 5px;
+        }
+
+        &:hover {
+          color: #ffffff;
+          background: $nav-primary;
+        }
+      }
+    }
+
+    &__header {
+      margin: 0 0 10px 0;
+      color: $nav-secondary;
+      font-size: 20px;
+    }
+
+    &__total {
+      padding: 5px;
+      margin-bottom: 20px;
+      border: solid 1px $nav-secondary;
+      color: $nav-secondary;
+    }
+
+    &__text {
+      color: $nav-primary;
+      /*text-transform: capitalize;*/
+      text-transform: none;
+      margin: 0;
+
+      &:not(:last-child) {
+        margin-bottom: 35px;
+      }
+    }
+
+    &__subheader {
+      margin: 0 0 20px 0;
+      text-transform: capitalize;
+
+      span {
+        text-transform: uppercase;
+      }
+    }
+
+    &__badges {
+      margin-bottom: 10px;
+      display: flex;
+    }
+
+    &__badge {
+      padding: 5px;
+      width: 16px;
+      height: 16px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      border-radius: 50%;
+      box-sizing: border-box;
+
+      &:first-child {
+        border: solid 1px $nav-primary;
+        color: $nav-primary;
+      }
+      &:nth-child(2) {
+        padding: 0;
+        color: $nav-ok;
+        font-size: 16px;
+      }
+      &:last-child {
+        background: $nav-secondary;
+        color: #ffffff;
+      }
+
+      &:not(:last-child) {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  &__search {
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #ffffff;
+    cursor: pointer;
+  }
+}
+
+.main {
+  img {
+    width: 100%;
+  }
+}

@@ -7,7 +7,7 @@ const autoprefixer = require('autoprefixer');
 module.exports = {
     entry: [
         __dirname + "/src/app/index.js",
-        __dirname + "/src/style/app.scss"
+        __dirname + "/src/style/index.scss"
     ],
     output: {
         path: __dirname + '/dist',
@@ -19,29 +19,7 @@ module.exports = {
                 test: /\.js$/,
                 use: 'babel-loader',
             },
-            /*{
-                test: /\.css$/,
-                use:  [
-                    {
-                        loader: MiniCssExtractPlugin.loader
-                    },
-                    {
-                        loader: "css-loader"
-                    },
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            plugins: [
-                                autoprefixer({
-                                    browsers:['ie >= 8', 'last 4 version']
-                                })
-                            ],
-                            sourceMap: true
-                        }
-                    },
-                ]
-            }*/
-          {
+            {
                 test: /\.(sass|scss)$/,
                 use:  [
                     {
