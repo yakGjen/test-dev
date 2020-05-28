@@ -5,12 +5,13 @@
 $nav-primary: #959595;
 $nav-secondary: #f20134;
 $nav-ok: #26910d;
-$nav-font-size: 20px;
-$header-vertical-padding: 15px;
-$header-horizontal-padding: 20px;
+$nav-font-size: 30px;
+$header-vertical-padding: 12px;
+$header-horizontal-padding: 25px;
 
 
 .container {
+  margin: 0 auto;
   /*max-width: 1904px;*/
   width: 1904px;
 }
@@ -39,7 +40,7 @@ $header-horizontal-padding: 20px;
   &__text {
     font-family: 'Patua One', cursive;
     font-weight: 500;
-    font-size: 13px;
+    font-size: 18px;
     font-style: italic;
     text-transform: uppercase;
   }
@@ -50,6 +51,8 @@ $header-horizontal-padding: 20px;
 }
 
 .news {
+  font-size: 12px;
+
   &__text {
     text-transform: uppercase;
     font-weight: bold;
@@ -57,6 +60,21 @@ $header-horizontal-padding: 20px;
   &__new {
     margin-left: 10px;
     font-style: italic;
+  }
+}
+
+.authorization {
+  text-transform: uppercase;
+  font-size: 13px;
+
+  span {
+    &:not(:last-child) {
+      margin: 0 9px;
+    }
+    &:last-child {
+      margin-left: 4px;
+      font-size: 16px;
+    }
   }
 }
 
@@ -98,7 +116,7 @@ $header-horizontal-padding: 20px;
     }
 
     &:not(:last-child) {
-      border-right: solid 1px #555654;
+      border-right: solid 1px #ca4b5e;
     }
 
     &:hover {
@@ -111,14 +129,15 @@ $header-horizontal-padding: 20px;
 
   &__card {
     width: 100%;
-    padding: 20px 40px;
+    padding: 21px 38px;
     box-sizing: border-box;
-    /*display: none;*/
-    display: flex;
+    display: none;
+    /*display: flex;*/
+    /*justify-content: space-between;*/
 
     position: absolute;
     left: 0;
-    top: $header-vertical-padding * 2 + $nav-font-size;
+    top: $header-vertical-padding * 2.5 + $nav-font-size;
 
     background: #ffffff;
   }
@@ -127,6 +146,7 @@ $header-horizontal-padding: 20px;
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-size: 10px;
+    cursor: default;
 
     &__item {
       width: calc(100% / 6);
@@ -139,18 +159,48 @@ $header-horizontal-padding: 20px;
 
       box-sizing: border-box;
       color: #000000;
+
+      &:nth-child(2) {
+        margin-right: 67px;
+      }
+
+      &:nth-child(n+3) {
+        margin-right: 25px;
+      }
+
+      &:nth-child(4) {
+        padding-left: 20px;
+
+        & .submenu__subheader {
+          margin-bottom: 8px !important;
+        }
+      }
+
+      &:nth-child(5) {
+        padding-left: 27px;
+
+        & .submenu__subheader {
+          margin-bottom: 8px !important;
+        }
+      }
+
+      &:nth-child(6) {
+        padding-left: 33px;
+      }
     }
 
     .buttons {
+      width: 398px;
       align-items: stretch;
 
       &__button {
-        padding: 14px 0;
+        padding: 12px 0;
+        box-sizing: border-box;
 
         background: transparent;
         border: solid 1px $nav-primary;
         color: $nav-primary;
-        font-size: 10px;
+        font-size: 13px;
         cursor: pointer;
 
         &:not(:last-child) {
@@ -165,27 +215,37 @@ $header-horizontal-padding: 20px;
     }
 
     &__header {
-      margin: 0 0 10px 0;
+      margin: -7px 0 6px 0;
       color: $nav-secondary;
-      font-size: 20px;
+      font-size: 30px;
     }
 
     &__total {
-      padding: 5px;
+      padding: 3px 6px;
       margin-bottom: 20px;
       border: solid 1px $nav-secondary;
       color: $nav-secondary;
+      font-size: 12px;
     }
 
     &__text {
+      margin: 0;
       color: $nav-primary;
       /*text-transform: capitalize;*/
       text-transform: none;
-      margin: 0;
+      font-size: 14px;
 
       &:not(:last-child) {
-        margin-bottom: 35px;
+        margin-bottom: 30px;
       }
+    }
+
+    &__text-descr {
+      margin: 0 0 40px 0;
+
+      font-size: 12px;
+      text-transform: none;
+      color: $nav-primary;
     }
 
     &__subheader {
@@ -203,9 +263,9 @@ $header-horizontal-padding: 20px;
     }
 
     &__badge {
-      padding: 5px;
-      width: 16px;
-      height: 16px;
+      padding: 3px;
+      width: 18px;
+      height: 18px;
 
       display: flex;
       justify-content: center;
@@ -221,7 +281,7 @@ $header-horizontal-padding: 20px;
       &:nth-child(2) {
         padding: 0;
         color: $nav-ok;
-        font-size: 16px;
+        font-size: 18px;
       }
       &:last-child {
         background: $nav-secondary;
@@ -240,6 +300,7 @@ $header-horizontal-padding: 20px;
     background: transparent;
     color: #ffffff;
     cursor: pointer;
+    font-size: 18px;
   }
 }
 
