@@ -4,6 +4,7 @@
 
 $nav-primary: #959595;
 $nav-secondary: #f20134;
+$nav-secondary-transp: rgba(242, 1, 52, 0.5);
 $nav-ok: #26910d;
 $nav-font-size: 30px;
 $header-vertical-padding: 12px;
@@ -12,8 +13,7 @@ $header-horizontal-padding: 25px;
 
 .container {
   margin: 0 auto;
-  /*max-width: 1904px;*/
-  width: 1904px;
+  max-width: 1904px;
 }
 
 .header {
@@ -127,7 +127,21 @@ $header-horizontal-padding: 25px;
     }
   }
 
-  &__card {
+  /*&__card {
+    width: 100%;
+    padding: 21px 38px;
+    box-sizing: border-box;
+    display: none;
+
+    position: absolute;
+    left: 0;
+    top: $header-vertical-padding * 2.5 + $nav-font-size;
+
+    z-index: 10;
+    background: #ffffff;
+  }*/
+
+  .submenu {
     width: 100%;
     padding: 21px 38px;
     box-sizing: border-box;
@@ -139,10 +153,9 @@ $header-horizontal-padding: 25px;
     left: 0;
     top: $header-vertical-padding * 2.5 + $nav-font-size;
 
+    z-index: 10;
     background: #ffffff;
-  }
 
-  .submenu {
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-size: 10px;
@@ -305,7 +318,24 @@ $header-horizontal-padding: 25px;
 }
 
 .main {
+  position: relative;
+  
   img {
     width: 100%;
+  }
+
+  &__banner {
+    padding: 60px 223px 60px 20px;
+
+    position: absolute;
+    top: 66%;
+
+    font-size: 40px;
+    background: $nav-secondary-transp;
+    color: #ffffff;
+
+    span:nth-child(2) {
+      font-size: 10px;
+    }
   }
 }
